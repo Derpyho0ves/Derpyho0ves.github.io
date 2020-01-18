@@ -7,10 +7,10 @@ header:
   image: "/images/derpyhooves.png"
 ---
 
-# General 
+## General 
  
-* OSCP Review(/OSCP-Review)
+* [OSCP Review](/OSCP-Review)
 
-# Tutorials
+## Tutorials
  
-* Vulnserver(Vulnserver/)
+* [Vulnserver](/Vulnserver)
