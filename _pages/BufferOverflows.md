@@ -1,9 +1,10 @@
 ---
 layout: archive
-permalink: /Buffer Overflows/
+permalink: /Buffer-Overflows/
 title: "Buffer Overflows"
+author_profile: true
 header:
-	image: "/"
+  image: "/images/derpyhooves.png"
 ---
 
 {% include base_path %}

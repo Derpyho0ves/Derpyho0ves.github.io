@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-	image: "/"
+  image: "/images/derpyhooves.png"
 ---
 
 Bachelor’s degree in Information Teechnlogy with a morbid curiosity towards all things IT, especially Information security.
