@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 permalink: /categories/
 title: "Categories"
 author_profile: true
@@ -7,35 +7,10 @@ header:
   image: "/images/derpyhooves.png"
 ---
 
- H1 General 
+ # General 
  
- ## H2 Sub heading
+..* OSCP Review (/OSCP-Review)
+
+ # Tutorials
  
- ### H3 another sub heading
- 
- Some text
- 
- some italic *italics*
- 
- some **bold** text
- 
- a link here [link] (https://github.com/derpyh00ves)
- 
- bullet list
- 
- * fist item
- + second item
- - third item
- 
- number list
- 
- 1. fist
- 2. scond
- 3. third
- 
- python code:
- '''python
-		a = hello world
-		print (a)
- 
- '''
+ --* Vulnserver (Vulnserver/)
