@@ -1,9 +1,8 @@
 ---
 layout: archive
-permalink: /homelab/
-title: "Buffer Overflows"
+permalink: /posts/
+title: "Posts"
 author_profile: true
 header:
   image: "/images/derpyhooves.png"
 ---
-
