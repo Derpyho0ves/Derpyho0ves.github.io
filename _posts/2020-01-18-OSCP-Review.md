@@ -4,7 +4,7 @@ title: "OSCP Review"
 date: 2020-01-18 
 tags: [Offensive Security, PWK, OSCP, kali]
 header:
-  image: "/images/oscp/offsec-student-certified-emblem-rgb-oscp"
+  image: "/images/oscp/offsec-student-certified-emblem-rgb-oscp.png"
 excerpt: "OSCP Review"
 ---
 
