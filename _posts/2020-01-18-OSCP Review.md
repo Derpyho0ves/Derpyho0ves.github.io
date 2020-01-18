@@ -4,12 +4,7 @@ date: 2020-01-18
 tags: [Offensive Security, PWK, OSCP, kali]
 header:
   image: "/images/oscp/oscp.png"
- excerpt: "OSCP Review"
+excerpt: "OSCP Review"
  ---
  
- # Intro
- 
- # Labs
- 
- # Exam
- 
+
