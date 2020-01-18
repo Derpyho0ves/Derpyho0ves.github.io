@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: /homelab/
-title: "Buffer Overflows"
+title: "Homelab"
 author_profile: true
 header:
   image: "/images/derpyhooves.png"
