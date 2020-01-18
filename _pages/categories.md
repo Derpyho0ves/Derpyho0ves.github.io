@@ -1,13 +1,13 @@
 ---
 layout: archive
 permalink: /categories/
-title: "Homelab"
+title: "Categories"
 author_profile: true
 header:
   image: "/images/derpyhooves.png"
 ---
 
- # H1 
+ H1 General 
  
  ## H2 Sub heading
  
