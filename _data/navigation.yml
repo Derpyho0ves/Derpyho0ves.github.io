@@ -2,8 +2,8 @@
 main:
   - title: "About"
     url: /about/
-   - title: "Buffer Overflows"
-     url: /Buffer Overflows/
+  - title: "Buffer Overflows"
+     url: /Buffer-Overflows/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
