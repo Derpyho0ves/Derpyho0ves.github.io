@@ -110,7 +110,7 @@ author:
   name             : "Derpyho0ves"
   avatar           : "/images/derpyhooves.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : ""
-  # location         : ""
+  location         : "Ether"
   # email            :
   links:
     - label: "Email"
