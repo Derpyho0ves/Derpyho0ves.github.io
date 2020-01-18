@@ -8,4 +8,4 @@ header:
 
 ### 2020
 
-[OSCP Review](/2020-01-18-OSCP-Review.md)
+[OSCP Review](/OSCP-Review/ )
