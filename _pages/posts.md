@@ -8,4 +8,4 @@ header:
 
 ### 2020
 
-[OSCP Review](/_posts/2020-01-18-OSCP-Review.md)
+[OSCP Review](_posts/2020-01-18-OSCP-Review.md)
