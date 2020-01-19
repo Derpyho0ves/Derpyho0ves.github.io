@@ -194,7 +194,7 @@ badchars = ("\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x1
 "\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff")
 
 ```
-[Found from bulbsecuirty.com](https://bulbsecurity.com/finding-bad-characters-with-immunity-debugger-and-mona-py/)
+[Found from bulbsecurity.com](https://bulbsecurity.com/finding-bad-characters-with-immunity-debugger-and-mona-py/)
 
 Now we edit our python script to include the badchars, I also removed the **\x00** character. The code should look something like
 
@@ -230,7 +230,7 @@ while True:
 ```
 
 Excuting the script and looking at Immunity we can see that again we crashed the program and overwrote EIP with 42424242, but to check
-for badchars we can right click on ESP value and click "follow in dump"
+for badchars we can right click on ESP value and click "Follow in Dump"
 
 ![exp8](/images/vulnserver/stack/exp8.PNG)
 
@@ -238,5 +238,22 @@ In the hex dump we can see all the characters we send to vulnserver starting fro
 
 ![exp9](/images/vulnserver/stack/exp9.PNG)
 
-None of the characters are mangled in any way, this could be indicated wtih e.g. "01" being replaced by "b0" which would mean that
+None of the characters are mangled in any way, this could be indicated with e.g. "01" being replaced by "b0" which would mean that
 "01" would be a bad character.
+
+### Finding Module
+
+Finding module means that we need to find a usable module that would allow us to execute our maliciosu code. The module can'that
+have memory potections enabled such as DEB, ASLR, SafeSEH etc. Now there are ways to bypass these but that is out-of-scope. We can do this by using
+the mona module we installed during the setup.
+
+In Immunity type !mona modules on the search bar and press enter
+
+![exp10](/images/vulnserver/stack/exp10.PNG)
+
+Following window will appear. Here we are looking for a DLL that is attached to vulnserver, and we should see one named *essfunc.dll** that has all of the
+memory protections set to **false**
+
+![exp11](/images/vulnserver/stack/exp11.PNG)
+
+
