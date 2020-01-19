@@ -9,11 +9,11 @@ header:
 
 ## General 
  
-* [OSCP Review](/OSCP-Review)
+* [Offensive Security - OSCP Review](/Offensive-Security-OSCP-Review)
 
 ## Tutorials
  
-* [Vulnserver Vanilla Buffer Overflow](/Vulnserver)
+* [Vulnserver - Stack Based Buffer Overflow](/Vulnserver-Stack-Based-Buffer-Overflow)
 
 ## HackTheBox Walkthroughs
 
