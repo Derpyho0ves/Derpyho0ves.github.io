@@ -45,3 +45,40 @@ After downloading the preferred Virtualization platform we need to create the tw
 
 Repeat the steps for the other Virtual Machine.
 ### On VirtualBox
+
+1. Open VirtualBox and click on the blue icon named "new"
+![vb1](/images/vulnserver/stack/vb1.PNG)
+
+2. New window opens, give the Virtual Machine a name, choose the version and click "Next"
+![vb2](/images/vulnserver/stack/vb2.PNG)
+
+3. Next you can incrase RAM on the operating system, default is 2GB I'll give it 6GB to make it bit more responsive click "Next"
+![vb3](/images/vulnserver/stack/vb3.PNG)
+
+4. Next create the Hard Disk file, default is fine and click "Create"
+![vb4](/images/vulnserver/stack/vb4.PNG)
+
+5. Next choose the Hard Disk file type, default VDI is fine and click "Next"
+![vb5](/images/vulnserver/stack/vb5.PNG)
+
+6. Next choose the storage type, use "Dynamically allocated" and click "Next" 
+![vb6](/images/vulnserver/stack/vb6.PNG)
+
+7. Next choose the hard disk size and location, defaults are fine and click "Create"
+![vb7](/images/vulnserver/stack/vb7.PNG)
+
+8. After creating the VM, start it up and it may ask you to select the start-up disk, choose the ISO you wish to install.
+![vb8](/images/vulnserver/stack/vb8.PNG)
+
+Repeat the steps for the other Virtual Machine.
+
+### Setting up Vulnserver
+
+On your newly installed Wndows VM, download the Vulnserver software and extract it somewhere where it is easy to access such as the Desktop.
+![vuln1](/images/vulnserver/stack/vuln1.PNG)
+
+In the vulnserver folder there a few files, start the vulnserver.exe by right clicking it and "run as administrator"
+![vuln2](/images/vulnserver/stack/vuln2.PNG)
+
+You now have vulnserver up and running
+![vuln2](/images/vulnserver/stack/vuln2.PNG)
