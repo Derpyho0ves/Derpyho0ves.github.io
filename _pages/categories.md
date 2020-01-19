@@ -3,8 +3,7 @@ layout: single
 permalink: /categories/
 title: "Categories"
 author_profile: true
-header:
- 
+header: 
 ---
 
 ## General 

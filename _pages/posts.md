@@ -3,7 +3,6 @@ permalink: /posts/
 title: "Posts"
 author_profile: true
 header:
-
 ---
 
 ### 2020
