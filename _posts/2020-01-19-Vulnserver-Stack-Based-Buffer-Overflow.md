@@ -23,11 +23,26 @@ To practice exploiting the software we need the following
 I will be using [VMware Workstation pro](https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_workstation_pro/15_0), you could alternatively use [VirtualBox](https://www.virtualbox.org/wiki/Downloads) which is free. Select the version  based on your operating system e.g. Windows.
 After downloading the preferred Virtualization platform we need to create the two Virtual Machines Windows & Kali.
 
+After creating the VMs, start up Windows VM and download vulnserver, immunity debugger & mona.
 
+### Setting up Immunity Debugger
+
+[Download Immunity Debugger](https://debugger.immunityinc.com/ID_register.py), before you can download the site asks you to fill the form, you can put random information on fields.
+
+![immu1](/images/vulnserver/stack/immu1.PNG)
+
+Install Immunity Debugger and when the installer asks to install python 2.7.1 allow the installation.
+After the installation is complete download [mona](https://github.com/corelan/mona) and copy the mona.py over to the pycommands folder inside Immunity Debugger in this case **C:\Program Files (x86)\Immunity Inc\Immunity Debugger\PyCommands**
+
+![mona1](/images/vulnserver/stack/mona1.PNG)
+
+You can now open Immunity Debugger by right clicking the shortcut and "run as administrator"
+
+![immu2](/images/vulnserver/stack/immu2.PNG)
 
 ### Setting up Vulnserver
 
-On your newly installed Wndows VM, download the Vulnserver software and extract it somewhere where it is easy to access such as the Desktop.
+Download the Vulnserver software and extract it somewhere where it is easy to access such as the Desktop.
 
 ![vuln1](/images/vulnserver/stack/vuln1.PNG)
 
