@@ -298,7 +298,7 @@ while True:
 
 Take note how we added our return address to the script. Since we are attacking x86 architecture (32-bit) we need to add the
 address in litte endian format. Next going back to Immunity we need to add a software breakpoint which will stop the program from executing and
-will wait for further instructions when it hits our return address of **625011c7**. To do click so on the arrow highlighted in yellow.
+will wait for further instructions when it hits our return address of **625011c7**. To do so click on the arrow highlighted in yellow.
 
 ![exp15](/images/vulnserver/stack/exp15.PNG)
 
@@ -384,7 +384,7 @@ while True:
         
 ```
 
-After modifying the script, create netcat listener with the command *nc -lvnp 9001* and start vulnserver again and finally run the exploit.
+After modifying the script, create netcat listener with the command **nc -lvnp 9001** and start vulnserver again and finally run the exploit.
 Everything done correctly we will get a revese shell.
 
 ![exp20](/images/vulnserver/stack/exp20.PNG)
