@@ -8,9 +8,9 @@ header:
 
 ### 2020
 
-[OSCP Review](/OSCP-Review)
+[OSCP Review](/Offensive-Security-OSCP-Review)
 
-[Vulnserver Vanilla Buffer Overflow](/Vulnserver)
+[Vulnserver - Stack Based Buffer Overflow](/Vulnserver-Stack-Based-Buffer-Overflow)
 
 [Jerry](/HackTheBox-Jerry-Walkthrough)
 

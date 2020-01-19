@@ -1,7 +1,7 @@
 ---
 title: "HackTheBox - SolidState Walkthrough"
 date: 2020-01-19 
-tags: [htb, jerry, walkthrough, ctf, msfvenom]
+tags: [htb, solidstate, walkthrough, ctf, linux]
 header:  
 excerpt: "HackTheBox - SolidState Walkthrough"
 ---

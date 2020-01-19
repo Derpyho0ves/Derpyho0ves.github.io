@@ -1,7 +1,7 @@
 ---
 title: "HackTheBox - Nineveh Walkthrough"
 date: 2020-01-19 
-tags: [htb, jerry, walkthrough, ctf, msfvenom]
+tags: [htb, nineveh, walkthrough, ctf, linux]
 header:  
 excerpt: "HackTheBox - Nineveh Walkthrough"
 ---
