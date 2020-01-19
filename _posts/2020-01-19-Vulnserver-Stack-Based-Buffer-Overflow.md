@@ -7,15 +7,29 @@ excerpt: "Vulnserver - Stack Based Buffer Overflow"
 
 ##  Intro
 
-Vulnserver is an intentionally vulnerable software that can be found from [thegreycorner's blog](http://www.thegreycorner.com/p/vulnserver.html) or alternatively from their [GitHub](https://github.com/stephenbradshaw/vulnserver).
+Vulnserver is an intentionally vulnerable software that can be found from [thegreycorner's blog](http://www.thegreycorner.com/p/vulnserver.html) or alternatively on their [GitHub](https://github.com/stephenbradshaw/vulnserver).
 
 The software has multiple different Buffer Overflow vulnerabilities of which the Stack Based Buffer Overflow using the TRUN command is the simplest.
 
-To practice exploiting the software we need the following:
-* Vulnserver
-* [Mona.py](https://github.com/corelan/mona)
-* Windows 10 / 7 (I will be using Windows 10 x64)
-* [Immunity Debugger](https://www.immunityinc.com/products/debugger/) or whichever debugger you wish to use. 
+To practice exploiting the software we need the following
+* [Immunity Debugger](https://www.immunityinc.com/products/debugger/)
 * [Kali](https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/)
+* [Mona.py](https://github.com/corelan/mona)
+* Vulnserver
+* Windows 7 / 10 (I will be using Windows 10 x64)
 
-## Exploiting the TRUN Command
+## Setup
+
+I will be using [VMware Workstation pro](https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_workstation_pro/15_0), you could alternatively use [VirtualBox](https://www.virtualbox.org/wiki/Downloads) which is free, select the version  based on your operating system e.g. Windows.
+After downloading the preferred Virtualization platform we need to create the two Virtual Machines Windows & Kali.
+
+### On VMware
+
+1. Open VMware Workstation pro and click on "Create new Virtual Machine"
+
+![vmware1](/images/vulnserver/stack/vmware1.PNG)
+
+
+
+
+### On VirtualBox
