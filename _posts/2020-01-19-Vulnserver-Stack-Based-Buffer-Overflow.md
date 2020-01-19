@@ -100,5 +100,7 @@ Looking at our fuzzing script we can see that the crash occured around 2400 byte
 
 ![exp3](/images/vulnserver/stack/exp3.PNG)
 
-Next we have to create an unique string using the metasploit-framework, specifially the pattern_create.rb which will
-create an unique string of a specified length. The script can be found at **/usr/share/metasploit-framework/tools/exploit/pattern_create.rb**.
+Next we have to create an unique string to find the offset - or where the crash actually happened within the 2400 bytes using the pattern_create.rb tool included in the metasploit-framework,
+**/usr/share/metasploit-framework/tools/exploit/pattern_create.rb** Specify the lenght of the string the -l flag
+
+![exp4](/images/vulnserver/stack/exp4.PNG)
