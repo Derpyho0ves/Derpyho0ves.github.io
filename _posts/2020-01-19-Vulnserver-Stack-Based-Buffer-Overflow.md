@@ -65,9 +65,9 @@ the commands by issuing the command **HELP** after connecting.
 
 ![exp1](/images/vulnserver/stack/exp1.PNG)
 
-First we create a fuzzing script with python that we can use to crash vulnserver. An example code could be spmethign like.
+First we create a fuzzing script with python that we can use to crash vulnserver. An example code could be something like
 
-````python
+```python
 #!/usr/bin/python
 import sys, socket
 from time import sleep
