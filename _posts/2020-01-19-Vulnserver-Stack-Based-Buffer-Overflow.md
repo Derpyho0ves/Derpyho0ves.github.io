@@ -131,6 +131,14 @@ while True:
         
 ```
 
-After executign the script, we can note that the server has crashed and we can see our EIP offset is 386F4337
+After executing the script, we can note that the server has crashed and we can see our EIP offset is 386F4337
 
 ![exp5](/images/vulnserver/stack/exp5.PNG)
+
+Now that we have our EIP we can use another metasploit-framework tool named pattern_offset located at
+**/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb** specify the same length as previously with
+the -l flag e.g. -l 2400 and use the flag -q to include our EIP 386F4337 e.g. -g 386F4337
+
+![exp6](/images/vulnserver/stack/exp6.PNG)
+
+We have our offset at 2003 bytes.
