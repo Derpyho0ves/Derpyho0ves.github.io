@@ -95,3 +95,10 @@ After running the python code, we can check Immunity Debugger and in a few momen
 access violation and execution of the program is paused, which is good (note since I'm using Windows 10 older versions may act differently).
 
 ![exp2](/images/vulnserver/stack/exp2.PNG)
+
+Looking at our fuzzing script we can see that the crash occured around 2400 bytes
+
+![exp3](/images/vulnserver/stack/exp3.PNG)
+
+Next we have to create an unique string using the metasploit-framework, specifially the pattern_create.rb which will
+create an unique string of a specified length. The script can be found at **/usr/share/metasploit-framework/tools/exploit/pattern_create.rb**.
