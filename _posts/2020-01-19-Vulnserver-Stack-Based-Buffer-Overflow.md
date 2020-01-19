@@ -235,5 +235,8 @@ for badchars we can right click on ESP value and click "follow in dump"
 ![exp8](/images/vulnserver/stack/exp8.PNG)
 
 In the hex dump we can see all the characters we send to vulnserver starting from "01" or "\x01" all the way to "ff" or "\xff".
+
+![exp9](/images/vulnserver/stack/exp9.PNG)
+
 None of the characters are mangled in any way, this could be indicated wtih e.g. "01" being replaced by "b0" which would mean that
 "01" would be a bad character.
