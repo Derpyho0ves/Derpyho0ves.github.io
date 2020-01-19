@@ -6,4 +6,4 @@ header:
 excerpt: "HackTheBox - Jerry Walkthrough"
 ---
 
-![jerry](/images/htb/jerry/jerry.png)
+![jerry](images/htb/jerry/jerry.png)
