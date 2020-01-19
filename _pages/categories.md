@@ -4,7 +4,7 @@ permalink: /categories/
 title: "Categories"
 author_profile: true
 header:
-  image: "/images/derpyhooves.png"
+ 
 ---
 
 ## General 
@@ -15,7 +15,7 @@ header:
  
 * [Vulnserver Vanilla Buffer Overflow](/Vulnserver)
 
-## HackTheBox write-ups
+## HackTheBox Walkthroughs
 
 * Easy
 	* [Jerry](/HackTheBox-Jerry-Walkthrough)
