@@ -67,7 +67,7 @@ the commands by issuing the command **HELP** after connecting.
 
 First we create a fuzzing script with python that we can use to crash vulnserver. An example code could be spmethign like.
 
-'''python
+````python
 #!/usr/bin/python
 import sys, socket
 from time import sleep
@@ -89,5 +89,4 @@ while True:
          except:
                  print "Fuzzing crashed at %s bytes" % str(len(buffer))
                  sys.exit()
-
-'''
+```
