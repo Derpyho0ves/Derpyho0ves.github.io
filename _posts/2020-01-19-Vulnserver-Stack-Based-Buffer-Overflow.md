@@ -327,7 +327,7 @@ where
 * exitfunc=thread - makes the exploit more reliable
 * -f c - filetype for the exploit, in this case it is c
 * -a x86 - specifies the architecture
-* -b - bad characters 
+* -b "x\00" - bad characters 
 
 ![exp19](/images/vulnserver/stack/exp19.PNG)
 
