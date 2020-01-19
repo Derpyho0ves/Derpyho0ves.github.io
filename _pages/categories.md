@@ -18,8 +18,8 @@ header:
 ## HackTheBox write-ups
 
 * Easy
-	* [Jerry]
+	* [Jerry](/HackTheBox-Jerry-Walkthrough)
 * Medium
-	* [SolidState]
+	* [SolidState](/HackTheBox-SolidState-Walkthrough)
 * Hard
-	* [Nineveh] 
+	* [Nineveh](/HackTheBox-Nineveh-Walkthrough) 
