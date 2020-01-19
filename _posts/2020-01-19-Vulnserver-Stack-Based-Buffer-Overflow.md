@@ -78,7 +78,8 @@ On your newly installed Wndows VM, download the Vulnserver software and extract 
 ![vuln1](/images/vulnserver/stack/vuln1.PNG)
 
 In the vulnserver folder there a few files, start the vulnserver.exe by right clicking it and "run as administrator"
+
 ![vuln2](/images/vulnserver/stack/vuln2.PNG)
 
 You now have vulnserver up and running
-![vuln2](/images/vulnserver/stack/vuln2.PNG)
+![vuln3](/images/vulnserver/stack/vuln3.PNG)
