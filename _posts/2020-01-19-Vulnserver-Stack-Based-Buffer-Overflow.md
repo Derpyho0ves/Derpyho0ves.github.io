@@ -91,7 +91,7 @@ while True:
                  sys.exit()
 ```
 
-After running the python code, we can check Immunity Debugger and in a few moments we can see that the progmra has crashed with
-access violation which is good (note since I'm using Windows 10 older versions may act differently).
+After running the python code, we can check Immunity Debugger and in a few moments we can see that the program has crashed with
+access violation and execution of the program is paused, which is good (note since I'm using Windows 10 older versions may act differently).
 
 ![exp2](/images/vulnserver/stack/exp2.PNG)
