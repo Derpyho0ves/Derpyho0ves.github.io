@@ -31,7 +31,7 @@ After downloading the preferred Virtualization platform we need to create the tw
 2. New window opens select "Typical" and click "next"
 ![vmware2](/images/vulnserver/stack/vmware2.PNG)
 
-3. Next select the operating system ISO that you just downloaded and click "next"	 
+3. Next select the operating system ISO that you just downloaded and click "next"
 ![vmware3](/images/vulnserver/stack/vmware3.PNG)
 
 4. Next give it some name, location can be left default and click "next"
