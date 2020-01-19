@@ -8,7 +8,7 @@ header:
 
 ### 2020
 
-[OSCP Review](/Offensive-Security-OSCP-Review)
+[Offensive Security - OSCP Review](/Offensive-Security-OSCP-Review)
 
 [Vulnserver - Stack Based Buffer Overflow](/Vulnserver-Stack-Based-Buffer-Overflow)
 
