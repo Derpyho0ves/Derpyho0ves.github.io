@@ -20,6 +20,7 @@ header:
 * Easy
 	* [Jerry](/HackTheBox-Jerry-Walkthrough)
 * Medium
-	* [SolidState](/HackTheBox-SolidState-Walkthrough)
+	* [Nineveh](/HackTheBox-Nineveh-Walkthrough)
+	* [SolidState](/HackTheBox-SolidState-Walkthrough)	 
 * Hard
-	* [Nineveh](/HackTheBox-Nineveh-Walkthrough) 
+	
