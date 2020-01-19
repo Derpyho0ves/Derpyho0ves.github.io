@@ -297,16 +297,16 @@ while True:
 ```
 
 Take note how we added our return address to the script. Since we are attacking x86 architecture (32-bit) we need to add the
-address in litte endian format. Next going back to Immunity we need to add a software breakpoint which will stop the prgorma from executing and
-will wait for further instructions when it hits our return address of **625011c7**. To do click on the arrow highlighted in yellow.
+address in litte endian format. Next going back to Immunity we need to add a software breakpoint which will stop the program from executing and
+will wait for further instructions when it hits our return address of **625011c7**. To do click so on the arrow highlighted in yellow.
 
 ![exp15](/images/vulnserver/stack/exp15.PNG)
 
-New window opens up and input your chose retrun address, in this case it is **625011c7**
+New window opens up and input your chosen retrun address, in this case it is **625011c7**
 
 ![exp16](/images/vulnserver/stack/exp16.PNG)
 
-The chosen memory address should be chose and have JMP ESP next to it, then press F2 to set the breakpoint and the address should change color to light blue.
+The chosen memory address should be chosen and have JMP ESP next to it, then press F2 to set the breakpoint and the address should change color to light blue.
 
 ![exp17](/images/vulnserver/stack/exp17.PNG)
 
