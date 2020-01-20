@@ -6,20 +6,7 @@ author_profile: true
 header: 
 ---
 
-## General 
- 
-* [Offensive Security - OSCP Review](/Offensive-Security-OSCP-Review)
-
-## Tutorials
+## Buffer Overflow Practice
  
 * [Vulnserver - Stack Based Buffer Overflow](/Vulnserver-Stack-Based-Buffer-Overflow)
 
-## HackTheBox Walkthroughs
-
-* Easy
-	* [Jerry](/HackTheBox-Jerry-Walkthrough)
-* Medium
-	* [Nineveh](/HackTheBox-Nineveh-Walkthrough)
-	* [SolidState](/HackTheBox-SolidState-Walkthrough)	 
-* Hard
-	
