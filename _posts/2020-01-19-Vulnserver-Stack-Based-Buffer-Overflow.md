@@ -2,7 +2,7 @@
 title: "Vulnserver - Stack Based Buffer Overflow"
 date: 2020-01-19 
 header:  
-excerpt: "Vulnserver - Stack Based Buffer Overflow"
+excerpt: "Vulnserver is an intentionally vulnerable software that can be found from thegreycorner’s blog or alternatively on their GitHub."
 ---
 
 ##  Intro
